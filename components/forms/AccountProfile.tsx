@@ -17,6 +17,7 @@ import { Button } from '../ui/button';
 import * as z from 'zod';
 import Image from 'next/image';
 import { ChangeEvent } from 'react';
+import { Textarea } from '../ui/textarea';
 
 interface Props {
     user: {
@@ -110,6 +111,44 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                                 <Input
                                     className='account-form_input no-focus'
                                     type='text'
+                                    {...field}
+                                />
+                            </FormControl>
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name='username'
+                    render={({ field }) => (
+                        <FormItem className='flex items-center gap-3 w-full'>
+                            <FormLabel className='text-base-semibold text-light-2'>
+                                Username
+                            </FormLabel>
+                            <FormControl className='flex-1 test-base-semibold text-gray-200'>
+                                <Input
+                                    className='account-form_input no-focus'
+                                    type='text'
+                                    {...field}
+                                />
+                            </FormControl>
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name='bio'
+                    render={({ field }) => (
+                        <FormItem className='flex items-center gap-3 w-full'>
+                            <FormLabel className='text-base-semibold text-light-2'>
+                                Bio
+                            </FormLabel>
+                            <FormControl className='flex-1 test-base-semibold text-gray-200'>
+                                <Textarea
+                                    rows={10}
+                                    className='account-form_input no-focus'
                                     {...field}
                                 />
                             </FormControl>
