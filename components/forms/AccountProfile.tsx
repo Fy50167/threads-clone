@@ -14,6 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { UserValidation } from '@/lib/validations/user';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
+import * as z from 'zod';
 
 interface Props {
     user: {
@@ -38,9 +39,16 @@ export default function AccountProfile({ user, btnTitle }: Props) {
         },
     });
 
+    function onSubmit(values: z.infer<typeof UserValidation>) {
+        console.log(values);
+    }
+
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+            <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className='flex flex-col justify-start gap-10'
+            >
                 <FormField
                     control={form.control}
                     name='username'
