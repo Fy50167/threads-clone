@@ -64,7 +64,7 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                     name='profile_photo'
                     render={({ field }) => (
                         <FormItem className='flex items-center gap-4'>
-                            <FormLabel className='account-form__image-label'>
+                            <FormLabel className='account-form_image-label'>
                                 {field.value ? (
                                     <Image
                                         src={field.value}
@@ -84,12 +84,12 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                                     />
                                 )}
                             </FormLabel>
-                            <FormControl className='flex-1 test-base-semibold text-gray-200'>
+                            <FormControl className='flex-1 text-base-semibold text-gray-200'>
                                 <Input
                                     type='file'
                                     accept='image/#'
                                     placeholder='Upload a a photo'
-                                    className='account-form__image-input'
+                                    className='account-form_image-input'
                                     onChange={(e) =>
                                         handleImage(e, field.onChange)
                                     }
@@ -155,7 +155,9 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                         </FormItem>
                     )}
                 />
-                <Button type='submit'>Submit</Button>
+                <Button type='submit' className='bg-purple-300'>
+                    Submit
+                </Button>
             </form>
         </Form>
     );
