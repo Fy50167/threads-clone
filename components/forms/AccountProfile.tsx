@@ -97,6 +97,25 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                         </FormItem>
                     )}
                 />
+
+                <FormField
+                    control={form.control}
+                    name='name'
+                    render={({ field }) => (
+                        <FormItem className='flex items-center gap-3 w-full'>
+                            <FormLabel className='text-base-semibold text-light-2'>
+                                Name
+                            </FormLabel>
+                            <FormControl className='flex-1 test-base-semibold text-gray-200'>
+                                <Input
+                                    className='account-form_input no-focus'
+                                    type='text'
+                                    {...field}
+                                />
+                            </FormControl>
+                        </FormItem>
+                    )}
+                />
                 <Button type='submit'>Submit</Button>
             </form>
         </Form>
