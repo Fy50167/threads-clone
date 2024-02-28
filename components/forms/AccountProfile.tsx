@@ -145,6 +145,7 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                                     }
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -164,6 +165,7 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                                     {...field}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -183,6 +185,7 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                                     {...field}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -202,10 +205,11 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                                     {...field}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
-                <Button type='submit' className='bg-purple-300'>
+                <Button type='submit' className='bg-primary-500'>
                     Submit
                 </Button>
             </form>
