@@ -7,7 +7,7 @@ interface Props {
     parentId: string | null;
     content: string;
     author: {
-        username: string;
+        name: string;
         image: string;
         id: string;
     };
@@ -36,10 +36,12 @@ export default function ThreadCard({
     comments,
     isComment,
 }: Props) {
-    console.log(author);
-
     return (
-        <article className='flex w-full flex-col rounded-xl bg-dark-2 p-7'>
+        <article
+            className={`flex w-full flex-col rounded-xl bg-dark-2 p-7 ${
+                isComment ? 'px-0 xs:px-7' : 'bg-dark-2 p-7'
+            }`}
+        >
             <div className='flex items-start justify-between'>
                 <div className='flex w-full flex-1 flex-row gap-4'>
                     <div className='flex flex-col items-center'>
@@ -61,7 +63,7 @@ export default function ThreadCard({
                     <div className='flex w-full flex-col'>
                         <Link href={`/profile${author.id}`} className='w-fit'>
                             <h4 className='cursor-pointer text-base-semibold text-light-1'>
-                                {author.username}
+                                {author.name}
                             </h4>
                         </Link>
                         <p className='mt-2 text-small-regular text-light-2'>
