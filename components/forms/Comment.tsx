@@ -82,8 +82,8 @@ export default function Comment({
                     )}
                 />
 
-                <Button type='submit' className='bg-primary-500'>
-                    Submit
+                <Button type='submit' className='comment-form_btn'>
+                    Reply
                 </Button>
             </form>
         </Form>
