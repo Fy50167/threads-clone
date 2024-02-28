@@ -62,7 +62,7 @@ export async function fetchThreads(pageNumber = 1, pageSize = 20) {
 
     const allPosts = await posts.exec();
 
-    const isNext = totalPostCount > skipAmount + posts.length;
+    const isNext = totalPostCount > skipAmount + allPosts.length;
 
-    return { posts, isNext };
+    return { allPosts, isNext };
 }
