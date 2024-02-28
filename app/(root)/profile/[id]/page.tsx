@@ -1,3 +1,4 @@
+import ProfileHeader from '@/components/shared/ProfileHeader';
 import { fetchUser } from '@/lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
@@ -15,7 +16,14 @@ export default async function Page({ params }: { params: { id: string } }) {
 
     return (
         <section>
-            <ProfileHeader />
+            <ProfileHeader
+                accountId={userInfo.id}
+                authUserId={user.id}
+                name={userInfo.name}
+                username={userInfo.username}
+                imgUrl={userInfo.image}
+                bio={userInfo.bio}
+            />
         </section>
     );
 }
