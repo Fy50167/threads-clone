@@ -17,6 +17,8 @@ import { Textarea } from '../ui/textarea';
 import { usePathname, useRouter } from 'next/navigation';
 import { updateUser } from '@/lib/actions/user.actions';
 import { ThreadValidation } from '@/lib/validations/thread';
+import { createThread } from '@/lib/actions/thread.actions';
+import { getRandomValues } from 'crypto';
 
 interface Props {
     user: {
@@ -42,8 +44,15 @@ export default function PostThread({ userId }: { userId: string }) {
         },
     });
 
-    const onSubmit = (e: any) => {
-        e.preventDefault();
+    const onSubmit = async (values: z.infer<typeof ThreadValidation>) => {
+        await createThread({
+            text: values.thread,
+            author: userId,
+            communityId: null,
+            path: pathname,
+        });
+
+        router.push('/');
     };
 
     return (
@@ -69,7 +78,7 @@ export default function PostThread({ userId }: { userId: string }) {
                         )}
                     />
 
-                    <Button type='submit' className='bg-primary-300'>
+                    <Button type='submit' className='bg-primary-500'>
                         Submit
                     </Button>
                 </form>

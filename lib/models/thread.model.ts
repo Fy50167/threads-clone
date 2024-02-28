@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { string } from 'zod';
 
 const threadSchema = new mongoose.Schema({
-    texrt: { type: string, required: true },
+    text: { type: String, required: true },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
