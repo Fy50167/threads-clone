@@ -49,8 +49,6 @@ export default function Comment({
         );
 
         form.reset();
-
-        router.push('/');
     };
 
     return (

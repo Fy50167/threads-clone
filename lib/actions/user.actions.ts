@@ -30,19 +30,17 @@ interface Params {
 
 export async function updateUser({
     userId,
-    username,
-    name,
     bio,
-    image,
+    name,
     path,
+    username,
+    image,
 }: Params): Promise<void> {
-    connectToDB();
-
     try {
+        connectToDB();
+
         await User.findOneAndUpdate(
-            {
-                id: userId,
-            },
+            { id: userId },
             {
                 username: username.toLowerCase(),
                 name,
@@ -50,16 +48,41 @@ export async function updateUser({
                 image,
                 onboarded: true,
             },
-            {
-                upsert: true,
-            }
+            { upsert: true }
         );
 
         if (path === '/profile/edit') {
             revalidatePath(path);
         }
     } catch (error: any) {
-        throw new Error(error);
+        throw new Error(`Failed to create/update user: ${error.message}`);
+    }
+}
+
+export async function createUser({
+    userId,
+    bio,
+    name,
+    path,
+    username,
+    image,
+}: Params): Promise<void> {
+    try {
+        connectToDB();
+
+        await User.create(
+            { id: userId },
+            {
+                username: username.toLowerCase(),
+                name,
+                bio,
+                image,
+                onboarded: true,
+            },
+            { upsert: true }
+        );
+    } catch (error: any) {
+        throw new Error(`Failed to create/update user: ${error.message}`);
     }
 }
 
