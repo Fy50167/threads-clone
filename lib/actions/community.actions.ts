@@ -17,6 +17,7 @@ export async function createCommunity(
     createdById: string
 ) {
     try {
+        console.log('successfully created community');
         connectToDB();
 
         const user = await User.findOne({ id: createdById });

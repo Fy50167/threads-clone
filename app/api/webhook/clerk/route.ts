@@ -1,3 +1,9 @@
+/* eslint-disable camelcase */
+// Resource: https://clerk.com/docs/users/sync-data-to-your-backend
+// Above article shows why we need webhooks i.e., to sync data to our backend
+
+// Resource: https://docs.svix.com/receiving/verifying-payloads/why
+// It's a good practice to verify webhooks. Above article shows why we should do it
 import { Webhook, WebhookRequiredHeaders } from 'svix';
 import { headers } from 'next/headers';
 
@@ -57,6 +63,7 @@ export const POST = async (request: Request) => {
 
     // Listen organization creation event
     if (eventType === 'organization.created') {
+        console.log('route org create hit');
         // Resource: https://clerk.com/docs/reference/backend-api/tag/Organizations#operation/CreateOrganization
         // Show what evnt?.data sends from above resource
         const { id, name, slug, logo_url, image_url, created_by } =
