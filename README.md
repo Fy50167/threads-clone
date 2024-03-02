@@ -1,7 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Threads
 
-## Getting Started
+This is an application designed to closely mimic the functionality of the social media app Threads. The framework used is Next.js, the backend uses MongoDB, and the accountn creation and organization features are handled by Clerk.
+Created in large part by following along on this Javascript Mastery tutorial: [Video Link](https://youtu.be/O5cmLDVTgAs?si=fLIyjLuOneCgPAtz)
 
+## Screenshot
+
+![Site screenshot](/screenshot.jpeg)
+
+## Usage
+
+If the uploadthing servers are down and account onboarding isn't possible, try using this test account with the following information to get in:
+email: bot501671@gmail.com
+password: botpassword123
+
+Application can be accessed at the following link: [App link](https://threads-clone-eight-eta.vercel.app)
+
+Alternative, clone the repo and run it locally.
 First, run the development server:
 
 ```bash
@@ -16,21 +30,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contact
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contact me via email: fy50167@gmail.com
+Or through my website at: francisyang.com

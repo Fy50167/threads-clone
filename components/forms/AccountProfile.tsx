@@ -37,7 +37,7 @@ interface Props {
     btnTitle: string;
 }
 
-export default function AccountProfile({ user, btnTitle }: Props) {
+const AccountProfile = ({ user, btnTitle }: Props) => {
     const router = useRouter();
     const pathname = usePathname();
     const { startUpload } = useUploadThing('media');
@@ -217,4 +217,6 @@ export default function AccountProfile({ user, btnTitle }: Props) {
             </form>
         </Form>
     );
-}
+};
+
+export default AccountProfile;
