@@ -47,8 +47,6 @@ export default function CommunityCard({
                 </div>
             </div>
 
-            <p className='mt-4 text-subtle-medium text-gray-1'>{bio}</p>
-
             <div className='mt-5 flex flex-wrap items-center justify-between gap-3'>
                 <Link href={`/communities/${id}`}>
                     <Button size='sm' className='community-card_btn'>
