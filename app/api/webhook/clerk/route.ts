@@ -63,7 +63,7 @@ export const POST = async (request: Request) => {
 
     // Listen organization creation event
     if (eventType === 'organization.created') {
-        console.log('route org create hit');
+        console.log('hit');
         // Resource: https://clerk.com/docs/reference/backend-api/tag/Organizations#operation/CreateOrganization
         // Show what evnt?.data sends from above resource
         const { id, name, slug, logo_url, image_url, created_by } =
