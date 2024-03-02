@@ -15,6 +15,7 @@ interface Props {
     createdAt: string;
     community: {
         id: string;
+        _id: string;
         name: string;
         image: string;
     } | null;
