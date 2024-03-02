@@ -45,7 +45,7 @@ function Searchbar({ routeType }: Props) {
                         ? 'Search communities'
                         : 'Search creators'
                 }`}
-                className='no-focus searchbar_input'
+                className='no-focus searchbar_input bg-white'
             />
         </div>
     );
