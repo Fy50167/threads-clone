@@ -14,7 +14,7 @@ interface Props {
     }[];
 }
 
-export default async function CommunityCard({
+export default function CommunityCard({
     id,
     name,
     username,
